@@ -1,101 +1,535 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="min-h-screen bg-gray-900 text-white">
+      <Hero />
+      <GamesSection />
+      <CasinoContent />
+    </main>
+  );
+}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+/* -----------------------------
+   Приветствие (Hero Component)
+------------------------------ */
+function Hero() {
+  return (
+    <section
+      className="relative bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/casikkk.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "120vw", // Растягивает секцию на всю ширину
+        height: "80vh", // Растягивает секцию на всю высоту экрана
+        overflow: "hidden",
+        left: "-135px",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="container mx-auto relative z-10 flex flex-col justify-center h-full text-center text-white px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          Καλωσορίσατε στο Casino μας
+        </h1>
+        <p className="text-lg md:text-2xl mb-6">
+          Ζήστε την απόλυτη εμπειρία του live casino!
+        </p>
+        <a
+          href="#"
+          className="bg-gradient-to-r from-blue-500 to-yellow-500 hover:from-blue-600 hover:to-yellow-600 text-black font-bold py-2 px-4 text-lg rounded animate-gradient"
+        >
+          Παίξτε Τώρα
+        </a>
+      </div>
+    </section>
+  );
+}
+
+/* -----------------------------
+   GAMES SECTION COMPONENT
+------------------------------ */
+function GamesSection() {
+  // Example data for games; you can replace these with real data.
+  const games = [
+    {
+      id: 1,
+      title: "Ρουλέτα",
+      description: "Experience the thrill of winning big!",
+      // Use an image path from the public folder or an imported image:
+      imageUrl: "/games-live.jpg",
+      // If using an imported image, you could use: imageUrl: gameImage1.src
+    },
+    {
+      id: 2,
+      title: "Μπλακτζάκ και Πόκερ",
+      description: "Test your skills at the poker table!",
+      imageUrl: "/poker1.jpg",
+    },
+    {
+      id: 3,
+      title: "Slots και Άλλα Τυχερά Παιχνίδια",
+      description: "Test your skills at the poker table!",
+      imageUrl: "/slots1.jpg",
+    },
+    // Add more games as needed
+  ];
+
+  return (
+    <section className="py-16 bg-gray-900">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-white mb-12">
+          Τα κορυφαία παιχνίδια μας
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {games.map((game) => (
+            <div
+              key={game.id}
+              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
+            >
+              <div
+                className="h-72 bg-cover bg-center"
+                style={{ backgroundImage: `url('${game.imageUrl}')` }}
+              ></div>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-white mb-3">
+                  {game.title}
+                </h3>
+                <p className="text-gray-400 mb-5">{game.description}</p>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-black font-bold py-2 px-6 rounded"
+                >
+                  Παίξτε Τώρα
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </section>
+  );
+}
+
+/* -----------------------------
+   CASINO CONTENT COMPONENT
+------------------------------ */
+function CasinoContent() {
+  return (
+    <article className="max-w-6xl mx-auto bg-gray-800 p-8 shadow rounded text-white my-16">
+      {/* Title */}
+      <header>
+        <h1 className="text-4xl font-bold text-center mb-8">
+          Ανακαλύψτε τα Καλύτερα Παιχνίδια Καζινο στην Ελλάδα
+        </h1>
+      </header>
+
+      {/* Introduction */}
+      <section className="mb-12">
+        <p className="mb-6">
+          Η αναζήτηση για το ιδανικό καζινο στην Ελλάδα έχει γίνει
+          πραγματικότητα για όσους λατρεύουν τα τύχηρα παιχνίδια και την
+          ατμόσφαιρα που προσφέρει ένα καζίνο live. Σε αυτό το άρθρο θα βρείτε
+          πλήρεις πληροφορίες για τα νόμιμα καζίνο live που λειτουργούν live
+          στην Ελλάδα, καθώς και για το online casino που ενώνει την καινοτομία
+          με την παράδοση ενός πραγματικού casino live. Είτε προτιμάτε να
+          παίζετε σε καζίνο live στην Ελλάδα είτε να δοκιμάσετε τις δυνατότητες
+          του online casino live, εμείς σας προσφέρουμε μια μεγάλη ποικιλία
+          επιλογών ώστε να παίξετε υπευθυνα και να απολαύσετε κάθε στιγμή. Σε
+          αυτό το άρθρο θα αναλύσουμε τα πιο δημοφιλή παιχνίδια που προσφέρει το
+          καζινο μας, θα παρουσιάσουμε τους κορυφαίους πάροχους όπως το
+          pragmatic play, netbet και το playtech, και θα σας καθοδηγήσουμε σε
+          όλα τα βήματα για να παίξετε με ασφάλεια και υπευθυνότητα σε ένα
+          casino στην Ελλάδα.
+        </p>
+      </section>
+
+      {/* Εισαγωγή στον Κόσμο του Καζίνο */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Εισαγωγή στον Κόσμο του Καζίνο
+        </h2>
+        <p className="mb-6">
+          Στον σύγχρονο ψηφιακό χώρο, το καζινο αποτελεί τον πυρήνα των
+          παιχνιδιών που προσφέρουν μοναδικές εμπειρίες. Το νόμιμα καζίνο live
+          και το online casino μας συνδυάζουν την παράδοση ενός παραδοσιακού
+          χώρου με τις δυνατότητες της τεχνολογίας, προσφέροντας ένα καζίνο live
+          που λειτουργεί με πλήρη άδεια και σύμφωνα με τους κανόνες της ελλάδα.
+          Σε αυτό το άρθρο, θα ανακαλύψετε πώς το casino live μας, καθώς και το
+          live casino που διατίθεται στο casino στην ελλάδα, προσφέρει μια
+          ζωντανή εμπειρία που δεν έχει όμοια, μέσα από μια μεγάλη ποικιλία
+          παιχνιδιών και συνεργασίες με κορυφαίους παρόχους όπως το pragmatic
+          play, το netbet και το playtech.
+        </p>
+        <p className="mb-6">
+          Επίσης, θα μάθετε πώς μπορείτε να παίξετε με ασφάλεια στο online
+          casino live μας και γιατί είναι σημαντικό να παίξετε υπευθυνα σε κάθε
+          σας συνεδρία. Το καζινο μας είναι ο ιδανικός χώρος για όλους τους
+          λάτρεις του live καζίνο στην ελλάδα, ενώ στο νόμιμα online περιβάλλον
+          μας, κάθε καζίνο λειτουργεί με την απαραίτητη άδεια που διασφαλίζει
+          ότι όλα είναι σύμφωνα με τους κανόνες. Η χώρα μας αγαπάει τα παιχνίδια
+          και το τμήμα εξυπηρέτησης είναι πάντα διαθέσιμο για να βοηθήσει τους
+          παίκτες.
+        </p>
+        <p className="mb-6">
+          Σε αυτό το άρθρο, το live περιβάλλον μας προσφέρει τη δυνατότητα να
+          δείτε πώς λειτουργεί κάθε στοιχείο: από την ρουλέτα και το πόκερ μέχρι
+          τα slots και όλα τα τυχερά παιχνίδια που διαθέτουμε. Με πλήρη προσφορά
+          και χρήση των καλύτερων τεχνολογιών διαδικτυακά, είμαστε εδώ για να
+          διασφαλίσουμε ότι κάθε εμπειρία στο καζινο μας είναι μοναδική.
+        </p>
+        <p className="mb-6 italic">
+          Σημείωση: Να παίξετε υπευθυνα είναι το πρώτο και κύριο μήνυμα που
+          θέλουμε να μεταδώσουμε σε κάθε λάτρη του καζινο μας.
+        </p>
+      </section>
+
+      {/* Νόμιμα Καζίνο Live και Τεχνολογία */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Νόμιμα Καζίνο Live και Τεχνολογία
+        </h2>
+        <p className="mb-6">
+          Τα νόμιμα καζίνο live μας προσφέρουν μια ζωντανή εμπειρία που
+          συνδυάζει την παραδοσιακή φιλοξενία ενός καζινο live στην ελλάδα με
+          την προηγμένη τεχνολογία του online casino. Σε κάθε συνεδρία, το
+          καζίνο live λειτουργεί με πλήρη άδεια και είναι σχεδιασμένο ώστε να
+          εξασφαλίζει ότι μόνο τα νόμιμα online παιχνίδια παίζονται με ασφάλεια.
+          Οι πλατφόρμες μας βασίζονται σε μια μεγάλη ποικιλία παιχνιδιών που
+          λειτουργούν διαδικτυακά και μπορείτε να παίξετε με τη βεβαιότητα ότι
+          όλα είναι σύμφωνα με τις προδιαγραφές της ελλάδα.
+        </p>
+        <p className="mb-6">
+          Το live casino μας, το οποίο ονομάζεται επίσης casino live, έχει
+          υιοθετήσει τις πιο σύγχρονες τεχνολογίες, ώστε να παρέχει ένα
+          περιβάλλον στο οποίο το καζινο λειτουργεί ομαλά. Οι παίκτες
+          απολαμβάνουν μια ζωντανή εμπειρία, όπου οι ελληνες ντίλερς δρουν σε
+          πραγματικό χρόνο, εξασφαλίζοντας μια μοναδική εμπειρία. Το νόμιμα
+          καζίνο live είναι πλέον μια από τις πιο αξιόπιστες λύσεις στην ελλάδα,
+          ενώ το online casino live μας ανταποκρίνεται πλήρως στις προσδοκίες
+          των χρηστών.
+        </p>
+      </section>
+
+      {/* Τα Κύρια Παιχνίδια του Καζίνο */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Τα Κύρια Παιχνίδια του Καζίνο
+        </h2>
+
+        {/* Ρουλέτα */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-center mb-2">1. Ρουλέτα</h3>
+          <p className="mb-6">
+            Η ρουλέτα αποτελεί ένα από τα πιο δημοφιλή παιχνίδια στο καζινο live
+            μας. Σε κάθε γύρο της ρουλέτας, οι παίκτες απολαμβάνουν την
+            αδρεναλίνη ενός πραγματικού παιχνιδιού, με τη διαφάνεια που
+            προσφέρει το casino live. Σημαντικό είναι να θυμάστε να παίξετε
+            υπευθυνα κάθε φορά που συμμετέχετε στη ρουλέτα. Επίσης, το νόμιμα
+            καζίνο live μας εξασφαλίζει ότι η ρουλέτα παίζεται με πλήρη άδεια
+            και σύμφωνα με τα διεθνή πρότυπα, ενώ οι εεεπ διασφαλίζουν την
+            πιστότητα του παιχνιδιού.
+          </p>
+          <p className="mb-6">
+            Η ρουλέτα είναι ένα από τα τυχερά παιχνίδια που σας προσφέρουν όλα
+            τα παιχνίδια του καζινο, και με λίγα λόγια, είναι ένα παιχνίδι που
+            αξίζει να το δοκιμάσετε. Με την υποστήριξη του pragmatic play και
+            του netbet, το παιχνίδι λειτουργεί ομαλά, ενώ εάν παίξετε υπευθυνα,
+            μπορείτε να απολαύσετε μια εμπειρία που δεν συγκρίνεται με τίποτα
+            άλλο.
+          </p>
+        </div>
+
+        {/* Μπλακτζάκ και Πόκερ */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-center mb-2">
+            2. Μπλακτζάκ και Πόκερ
+          </h3>
+          <p className="mb-6">
+            Το μπλακτζάκ και το πόκερ είναι κεντρικά παιχνίδια στο casino online
+            μας. Μέσα από αυτές τις επιλογές, το καζινο μας δείχνει πως η
+            στρατηγική και η τύχη συνυπάρχουν αρμονικά. Στο πόκερ, που είναι
+            επίσης γνωστό ως poker, οι παίκτες μπορούν να αναπτύξουν τις
+            δεξιότητές τους, ενώ το live καζίνο μας διασφαλίζει ότι κάθε γύρος
+            παίζεται με πλήρη διαφάνεια και άδεια. Το μπλακτζάκ και το πόκερ
+            είναι μόνο μερικά από τα παιχνίδια που προσφέρει το online casino
+            live, και με τη βοήθεια του pragmatic play και του playtech, οι
+            παίκτες έχουν την ευκαιρία να παίξουν με ασφάλεια και υπευθυνότητα.
+          </p>
+          <p className="mb-6">
+            Επιπλέον, κάθε φορά που συμμετέχετε σε ένα από αυτά τα παιχνίδια,
+            μην ξεχνάτε να παίξετε υπευθυνα. Είναι σημαντικό να θυμάστε ότι το
+            καζινο σας παρέχει πλήρη έλεγχο και τις καλύτερες δυνατότητες για να
+            απολαύσετε το πόκερ και το μπλακτζάκ.
+          </p>
+        </div>
+
+        {/* Slots και Άλλα Τυχερά Παιχνίδια */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-center mb-2">
+            3. Slots και Άλλα Τυχερά Παιχνίδια
+          </h3>
+          <p className="mb-6">
+            Τα slots αποτελούν ένα βασικό στοιχείο του casino online μας. Με μια
+            μεγάλη ποικιλία παιχνιδιών, το καζινο live σας προσφέρει όλα τα
+            τυχερά παιχνίδια που επιθυμείτε. Οι συνεργασίες με το pragmatic play
+            και το playtech διασφαλίζουν ότι κάθε slot λειτουργεί ομαλά και ότι
+            μπορείτε να παίξετε με ευκολία.
+          </p>
+          <p className="mb-6">
+            Τα slots είναι ιδανικά για όσους θέλουν να δοκιμάσουν την τύχη τους
+            σε ένα online casino, ενώ παράλληλα, η εμπειρία του live καζίνο
+            είναι διαθέσιμη για όσους προτιμούν τα live παιχνίδια. Καθώς
+            παίζετε, θυμηθείτε να παίξετε υπευθυνα ώστε να διατηρείτε πάντα τον
+            έλεγχο.
+          </p>
+        </div>
+      </section>
+
+      {/* Η Δύναμη του Live Casino στην Ελλάδα */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Η Δύναμη του Live Casino στην Ελλάδα
+        </h2>
+        <p className="mb-6">
+          Το live casino μας στην ελλάδα είναι ένα σύγχρονο παράδειγμα του πώς
+          ένα καζινο live μπορεί να λειτουργεί άψογα. Σε κάθε συνεδρία, το
+          casino live συνδυάζει την παράδοση του επίγειου καζινο με τις
+          δυνατότητες ενός online casino.
+        </p>
+        <p className="mb-6">
+          Οι νομιμα online πλατφόρμες μας, σε συνδυασμό με το νόμιμα καζίνο live
+          που λειτουργεί με πλήρη άδεια, εξασφαλίζουν ότι όλα τα παιχνίδια
+          παίζονται με ασφάλεια. Σημαντικό είναι επίσης να θυμάστε να παίξετε
+          υπευθυνα σε κάθε συνεδρία, καθώς αυτό ενισχύει την εμπειρία του live
+          casino και προστατεύει κάθε παίκτη.
+        </p>
+        <p className="mb-6">
+          Σε αυτήν την ενότητα, θα βρείτε αναφορές για το live στην ελλάδα και
+          το καζίνο live στην ελλάδα, που μαζί δημιουργούν ένα περιβάλλον όπου
+          το καζινο λειτουργεί με πλήρη αξιοπιστία.
+        </p>
+      </section>
+
+      {/* Ο Ρόλος του Τμήματος Εξυπηρέτησης */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Ο Ρόλος του Τμήματος Εξυπηρέτησης
+        </h2>
+        <p className="mb-6">
+          Το τμήμα εξυπηρέτησης μας είναι ένας κρίσιμος παράγοντας για το καζινο
+          μας. Σε κάθε online casino και live casino, το τμήμα εξυπηρέτησης
+          είναι πάντα διαθέσιμο για να παρέχει πληροφορίες και να βοηθά τους
+          παίκτες σε κάθε τους απορία. Στην ελλάδα, όπου το καζινο προσφέρει
+          πλήρη άδεια και λειτουργεί σύμφωνα με τις προβλεπόμενες διαδικασίες,
+          το τμήμα εξυπηρέτησης είναι ο ακρογωνιαίος λίθος για την επιτυχή
+          λειτουργία του χώρου.
+        </p>
+        <p className="mb-6">
+          Ανατρέξτε στις πληροφορίες που παρέχονται κάτω για περισσότερες
+          λεπτομέρειες σχετικά με το πως να επικοινωνήσετε με το τμήμα
+          εξυπηρέτησης του casino στην ελλάδα.
+        </p>
+      </section>
+
+      {/* Οδηγίες για Ασφαλές και Υπεύθυνο Παιχνίδι */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Οδηγίες για Ασφαλές και Υπεύθυνο Παιχνίδι
+        </h2>
+        <p className="mb-6">
+          Είναι εξαιρετικά σημαντικό να παίξετε υπευθυνα σε κάθε συνεδρία στο
+          καζινο μας. Εδώ παραθέτουμε ορισμένες βασικές οδηγίες για να
+          διασφαλίσετε μια ασφαλή εμπειρία στα παιχνίδια:
+        </p>
+        <ul className="list-disc list-inside mb-6">
+          <li>
+            <strong>Καθορίστε όρια:</strong> Ορίστε ένα συγκεκριμένο ποσό και
+            χρόνο για κάθε συνεδρία στο online casino ή στο live casino. Να
+            θυμάστε πάντα να παίξετε υπευθυνα.
+          </li>
+          <li>
+            <strong>Χρησιμοποιήστε τα εργαλεία αυτοελέγχου:</strong> Στο casino
+            online μας υπάρχουν λειτουργίες που σας βοηθούν να παρακολουθείτε τη
+            δραστηριότητά σας.
+          </li>
+          <li>
+            <strong>Ενημερωθείτε:</strong> Διαβάστε προσεκτικά όλους τους
+            κανόνες των παιχνιδιών. Όταν παίζετε στο live καζίνο ή στο casino
+            live, να θυμάστε πάντα να παίξετε υπευθυνα.
+          </li>
+          <li>
+            <strong>Ζητήστε βοήθεια:</strong> Επικοινωνήστε με το τμήμα
+            εξυπηρέτησης αν αντιμετωπίζετε οποιοδήποτε πρόβλημα.
+          </li>
+          <li>
+            <strong>Συνεχής παρακολούθηση:</strong> Οι εταιρίες που λειτουργούν
+            στο online casino live παρακολουθούν σε πραγματικό χρόνο όλα τα
+            παιχνίδια, εξασφαλίζοντας ότι παίξετε υπευθυνα.
+          </li>
+        </ul>
+        <p className="mb-6">
+          Η υπεύθυνη συμπεριφορά είναι το κλειδί για μια ασφαλή εμπειρία στο
+          καζινο και όλοι οι παίκτες θα πρέπει να τη τηρούν.
+        </p>
+      </section>
+
+      {/* Ειδικές Προσφορές και Προωθητικές Ενέργειες */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Ειδικές Προσφορές και Προωθητικές Ενέργειες
+        </h2>
+        <p className="mb-6">
+          Το casino online μας στην ελλάδα προσφέρει συχνά ειδικές προσφορές και
+          μπόνους για τα παιχνίδια. Οι προσφορές αυτές παρέχονται τόσο στο
+          online casino όσο και στο live casino, προσφέροντας επιπλέον κίνητρα
+          για να παίξετε υπευθυνα και να απολαύσετε τα νόμιμα καζίνο live μας.
+        </p>
+        <p className="mb-6">
+          Οι συνεργασίες με pragmatic play, netbet και playtech διασφαλίζουν ότι
+          οι προσφορές αυτές είναι συνεχώς ενημερωμένες και προσαρμοσμένες στις
+          ανάγκες των παίκτων. Επιπλέον, στο casino live στην ελλάδα και στο
+          online casino live, οι προσφορές δίνονται με πλήρη διαφάνεια και
+          σύμφωνα με τα διεθνή πρότυπα, ενώ πάντα σας υπενθυμίζουμε να παίξετε
+          υπευθυνα.
+        </p>
+      </section>
+
+      {/* Ο Κόσμος του Casino Live και οι Τεχνολογίες του */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Ο Κόσμος του Casino Live και οι Τεχνολογίες του
+        </h2>
+        <p className="mb-6">
+          Το online casino live μας είναι ένα παράδειγμα του πώς ένα καζινο live
+          μπορεί να συνδυάσει παραδοσιακές μεθόδους με σύγχρονες τεχνολογίες
+          διαδικτυακά. Μέσα από το casino live και το live casino μας, μπορείτε
+          να παίξετε σε ένα περιβάλλον που λειτουργεί πλήρως με άδεια και
+          σύμφωνα με τις προβλεπόμενες διαδικασίες.
+        </p>
+        <p className="mb-6">
+          Οι παρόχοι μας, μεταξύ των οποίων εμφανίζονται το pragmatic play, το
+          netbet και το playtech, συνεργάζονται για να προσφέρουν μια αξιόπιστη
+          ποικιλία παιχνιδιών. Επίσης, οι τεχνολογίες που λειτουργούν στο online
+          casino live σας δίνουν τη δυνατότητα να απολαύσετε ζωντανά παιχνίδια,
+          ενώ το live στην ελλάδα είναι πάντα διαθέσιμο για όσους προτιμούν την
+          αυθεντική εμπειρία.
+        </p>
+        <p className="mb-6">
+          Σε αυτό το περιβάλλον, είναι σημαντικό να παίξετε υπευθυνα και να
+          τηρείτε τους κανόνες που έχουν θέσει οι εταιρίες που λειτουργούν στο
+          καζινο. Επιπλέον, οι παίκτες μπορούν να επιλέξουν ανάμεσα σε πολλές
+          ελληνικές επιλογές, ενώ η ελληνική τεχνολογία ίντερνετ και τα
+          περισσότερα εργαλεία που διαθέτουμε σας βοηθούν να έχετε πάντα
+          πρόσβαση σε ένα από τα καλύτερα καζίνο στην ελλάδα.
+        </p>
+      </section>
+
+      {/* Συμβουλές για την Επιλογή του Κατάλληλου Casino Online */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Συμβουλές για την Επιλογή του Κατάλληλου Casino Online
+        </h2>
+        <p className="mb-6">
+          Όταν επιλέγετε ένα casino online ή ένα live casino, υπάρχουν ορισμένα
+          σημεία που πρέπει να λάβετε υπόψη:
+        </p>
+        <ul className="list-disc list-inside mb-6">
+          <li>
+            <strong>Ελέγξτε την άδεια:</strong> Βεβαιωθείτε ότι το καζινο
+            λειτουργεί με πλήρη άδεια και ότι όλα τα νόμιμα online πρότυπα
+            τηρούνται.
+          </li>
+          <li>
+            <strong>Επιθεωρήστε τις προσφορές:</strong> Επιλέξτε ένα casino
+            online που προσφέρει ποικιλία προσφορών, ενώ θυμηθείτε να παίξετε
+            υπευθυνα.
+          </li>
+          <li>
+            <strong>Διαβάστε τις πληροφορίες:</strong> Βεβαιωθείτε ότι έχετε
+            όλες τις πληροφορίες που χρειάζεστε, όπως αυτές που παρέχει το τμήμα
+            εξυπηρέτησης.
+          </li>
+          <li>
+            <strong>Επιλέξτε να παίξετε υπευθυνα:</strong> Η επιλογή σας θα
+            πρέπει να στηρίζεται πάντα στην υπεύθυνη συμπεριφορά.
+          </li>
+          <li>
+            <strong>Λάβετε υπόψη τις αξιολογήσεις:</strong> Αναζητήστε κριτικές
+            για το live καζίνο και το online casino live ώστε να βεβαιωθείτε ότι
+            το καζινο λειτουργεί όπως πρέπει.
+          </li>
+        </ul>
+        <p className="mb-6">
+          Η σωστή επιλογή ενός casino online ή ενός live casino θα σας
+          εξασφαλίσει μια ασφαλή εμπειρία στα παιχνίδια, όπου θα μπορείτε να
+          παίξετε υπευθυνα και να απολαύσετε όλα τα παιχνίδια που σας αρέσουν.
+        </p>
+      </section>
+
+      {/* Τελικές Συμπεράσματα */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Τελικές Συμπεράσματα
+        </h2>
+        <p className="mb-6">
+          Συνοψίζοντας, το καζινο μας στην ελλάδα αποτελεί τον ιδανικό προορισμό
+          για όσους αναζητούν μια πλήρη εμπειρία στο live casino και στο online
+          casino live. Μέσα από το νόμιμα καζίνο live και το καζίνο live, το
+          σύγχρονο online casino συνδυάζει την παράδοση με την καινοτομία,
+          παρέχοντας μια ζωντανή εμπειρία που βασίζεται σε αξιόπιστες
+          τεχνολογίες διαδικτυακά.
+        </p>
+        <p className="mb-6">
+          Οι συνεργασίες με κορυφαίους παρόχους όπως το pragmatic play, το
+          netbet και το playtech εξασφαλίζουν ότι κάθε παιχνίδι που προσφέρει το
+          καζινο μας είναι υψηλής ποιότητας και λειτουργεί με πλήρη άδεια.
+          Επιπλέον, το περιβάλλον στο casino online και στο live casino σας
+          επιτρέπει να παίξετε υπευθυνα και να απολαμβάνετε όλα τα παιχνίδια με
+          ασφάλεια.
+        </p>
+        <p className="mb-6">
+          Οι οδηγίες για να παίξετε υπευθυνα έχουν δοθεί αναλυτικά, και κάθε
+          φορά που συμμετέχετε σε ένα από τα παιχνίδια μας, θυμηθείτε να τηρείτε
+          τους κανόνες. Στο καζινο μας, κάθε live στιγμή μετράει και κάθε
+          εμπειρία στο online casino live είναι μοναδική.
+        </p>
+        <p className="mb-6">
+          Επιλέξτε το casino στην ελλάδα που συνδυάζει το νομιμα online
+          περιβάλλον με τις σύγχρονες τεχνολογίες του ιντερνετ, και θυμηθείτε
+          πάντα να παίξετε υπευθυνα για να απολαμβάνετε την κάθε στιγμή στο
+          καζινο σας.
+        </p>
+      </section>
+
+      {/* Συνοπτική Κλήση σε Δράση */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Συνοπτική Κλήση σε Δράση
+        </h2>
+        <p className="mb-6">
+          Είτε θέλετε να δοκιμάσετε την ρουλέτα, το πόκερ, είτε τα slots και όλα
+          τα άλλα παιχνίδια που προσφέρει το καζινο, να θυμάστε πάντα: παίξε
+          υπευθυνα. Επιλέξτε το casino online μας και απολαύστε την εμπειρία του
+          live casino με την εγγύηση των νόμιμα καζίνο live που λειτουργούν με
+          πλήρη άδεια. Η χώρα μας αγαπάει τα παιχνίδια και εσείς θα απολαύσετε
+          όλα όσα προσφέρει το καζινο, από τις πιο δημοφιλείς επιλογές μέχρι τις
+          πιο ελληνικές παραλλαγές, με όλα τα δωρεάν μπόνους και τις τεράστιες
+          προωθητικές ενέργειες που σας περιμένουν.
+        </p>
+      </section>
+
+      {/* Τελικό μήνυμα */}
+      <section>
+        <h2 className="text-2xl font-bold text-center mb-4">Τελικό μήνυμα</h2>
+        <p className="mb-6">
+          Επισκεφθείτε το καζινο μας σήμερα, απολαύστε την αυθεντική ζωντανή
+          εμπειρία του live casino και θυμηθείτε: παίξε υπευθυνα σε κάθε σας
+          βήμα. Με την υποστήριξη των κορυφαίων παρόχων όπως το pragmatic play,
+          το netbet και το playtech, και με πλήρη άδεια να εξασφαλίζει την
+          αξιοπιστία του, το καζινο μας είναι ο ιδανικός προορισμός για όλους
+          τους λάτρεις των παιχνιδιών στην ελλάδα.
+        </p>
+      </section>
+    </article>
   );
 }
