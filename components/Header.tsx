@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <header className="bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Логотип как ссылка на главную */}
+        {/* Logo as a button linking to home */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/images/logo-n1.png"
@@ -18,7 +18,7 @@ export default function Header() {
           />
         </Link>
 
-        {/* Навигация (ссылки на секции) */}
+        {/* Navigation (links to sections) */}
         <nav className="hidden md:flex space-x-6">
           <Link href="#about" scroll={false} className="hover:text-n1red transition">
             Σχετικά
@@ -37,7 +37,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Кнопки */}
+        {/* Buttons */}
         <div className="flex space-x-3">
           <button className="border border-n1red px-4 py-2 text-sm rounded hover:bg-n1red transition">
             Είσοδος
