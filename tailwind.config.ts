@@ -1,17 +1,19 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    // Include additional paths if you create other directories (e.g., components/)
+    "./app/**/*.{js,ts,jsx,tsx}", // добавляем папку app
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#f6ca8c",    // Example: a strong blue for header/footer backgrounds
-        secondary: "#F59E0B",  // Example: a warm yellow for buttons/links
-        accent: "#10B981",     // Example: a fresh green for accents
+        n1dark: "#0d0d0d",
+        n1red: "#ff2c2c",
+        n1gray: "#1f1f1f",
+        n1gold: "#ffd700",
       },
     },
   },
   plugins: [],
-}
+};

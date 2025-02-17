@@ -2,20 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite;
-  }
-  
+body {
+  @apply bg-n1dark text-white m-0 p-0;
+  font-family: sans-serif;
+}
