@@ -280,26 +280,14 @@ export default function N1CasinoText() {
       </section>
 
       <section
-        className="
-        relative
-        z-10
-        w-full
-        h-full
-        flex
-        flex-col
-        justify-center
-        items-start
-        p-6
-    -   left-4
-        text-white
-      "
-        style={{ backgroundImage: "url('/images/my-bg.jpg')" }} // Замените на свой путь
+        className="relative z-10 w-full h-full flex flex-col justify-center items-start p-6 text-white"
+        style={{ backgroundImage: "url('/images/my-bg.jpg')" }} // Replace with your image path
       >
-        {/* Градиентная подложка: слева темнее, справа прозрачная */}
+        {/* Gradient overlay: dark on the left, fading to transparent on the right */}
         <div className="absolute inset-0 rounded-md bg-gradient-to-r from-black/100 via-black/30 to-transparent" />
 
-        {/* Содержимое секции */}
-        <div className="relative z-10 w-full h-full flex flex-col justify-center items-start p-6 left-4 text-white">
+        {/* Content container */}
+        <div className="relative z-10 w-full h-full flex flex-col justify-center items-start p-6 text-white">
           <p className="text-2xl mb-2">Προσφορά Πρώτης Κατάθεσης</p>
           <h2 className="text-5xl font-bold mb-4">100% ΈΩΣ €300</h2>
           <button className="bg-red-600 hover:bg-red-500 transition-colors px-6 py-3 rounded-md text-sm font-semibold">
