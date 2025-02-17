@@ -281,18 +281,18 @@ export default function N1CasinoText() {
 
       <section
         className="
-    relative
-    w-[1000px]
-    h-[350px]
-    mx-auto
-    overflow-hidden
-    bg-cover
-    bg-center
-    bg-no-repeat
-    rounded-md
-    shadow-lg
-    border-spacing-5
-  "
+        relative
+        z-10
+        w-full
+        h-full
+        flex
+        flex-col
+        justify-center
+        items-start
+        p-6
+    -   left-4
+        text-white
+      "
         style={{ backgroundImage: "url('/images/my-bg.jpg')" }} // Замените на свой путь
       >
         {/* Градиентная подложка: слева темнее, справа прозрачная */}
