@@ -4,6 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
+  const scrollByPixels = (e: React.MouseEvent, pixels: number) => {
+    e.preventDefault();
+    window.scrollBy({ top: pixels, behavior: "smooth" });
+  };
+
   return (
     <header className="bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -18,20 +23,36 @@ export default function Header() {
           />
         </Link>
 
-        {/* Navigation (links to sections) */}
+        {/* Navigation (links scroll down a fixed number of pixels) */}
         <nav className="hidden md:flex space-x-6">
-          <Link href="#about" scroll={false} className="hover:text-n1red transition">
+          <a
+            href="#"
+            onClick={(e) => scrollByPixels(e, 750)}
+            className="hover:text-n1red transition"
+          >
             Σχετικά
-          </Link>
-          <Link href="#games" scroll={false} className="hover:text-n1red transition">
-            Φρουτάκια
-          </Link>
-          <Link href="#live-casino" scroll={false} className="hover:text-n1red transition">
-            Live Casino
-          </Link>
-          <Link href="#promotions" scroll={false} className="hover:text-n1red transition">
+          </a>
+          <a
+            href="#"
+            onClick={(e) => scrollByPixels(e, 3800)}
+            className="hover:text-n1red transition"
+          >
             Προσφορές
-          </Link>
+          </a>
+          <a
+            href="#"
+            onClick={(e) => scrollByPixels(e, 5245)}
+            className="hover:text-n1red transition"
+          >
+            Μέθοδοι Πληρωμής
+          </a>
+          <a
+            href="#"
+            onClick={(e) => scrollByPixels(e, 6660)}
+            className="hover:text-n1red transition"
+          >
+            Παιχνίδια
+          </a>
           <Link href="/faq" className="hover:text-n1red transition">
             FAQ
           </Link>
