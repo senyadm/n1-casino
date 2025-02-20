@@ -34,21 +34,21 @@ export default function Header() {
           </a>
           <a
             href="#"
-            onClick={(e) => scrollByPixels(e, 3800)}
+            onClick={(e) => scrollByPixels(e, 3500)}
             className="hover:text-n1red transition"
           >
             Προσφορές
           </a>
           <a
             href="#"
-            onClick={(e) => scrollByPixels(e, 5245)}
+            onClick={(e) => scrollByPixels(e, 4940)}
             className="hover:text-n1red transition"
           >
             Μέθοδοι Πληρωμής
           </a>
           <a
             href="#"
-            onClick={(e) => scrollByPixels(e, 6660)}
+            onClick={(e) => scrollByPixels(e, 6350)}
             className="hover:text-n1red transition"
           >
             Παιχνίδια
@@ -60,12 +60,22 @@ export default function Header() {
 
         {/* Buttons */}
         <div className="flex space-x-3">
-          <button className="border border-n1red px-4 py-2 text-sm rounded hover:bg-n1red transition">
+          <Link
+            href="https://www.n1casino.gr/el?sign-in=modal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-n1red px-4 py-2 text-sm rounded hover:bg-n1red transition"
+          >
             Είσοδος
-          </button>
-          <button className="bg-n1red px-4 py-2 text-sm rounded hover:bg-red-600 transition">
+          </Link>
+          <Link
+            href="https://www.n1casino.gr/el?sign-up=modal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-n1red px-4 py-2 text-sm rounded hover:bg-red-600 transition"
+          >
             Εγγραφή
-          </button>
+          </Link>
         </div>
       </div>
     </header>

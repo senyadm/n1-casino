@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function NewSection() {
   return (
@@ -26,9 +27,14 @@ export default function NewSection() {
             θέτει η εεεπ (χρησιμοποιεί προηγμένη κρυπτογράφηση για τα στοιχεία
             κάθε χρήστη).
           </p>
-          <button className="bg-red-600 hover:bg-red-500 transition-colors px-6 py-3 rounded-md text-sm font-semibold shadow-md">
+          <Link
+            href="https://www.n1casino.gr/el"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 hover:bg-red-500 transition-colors px-6 py-3 rounded-md text-sm font-semibold shadow-md"
+          >
             Μάθε Περισσότερα
-          </button>
+          </Link>
         </div>
       </div>
     </section>

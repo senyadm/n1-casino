@@ -1,178 +1,216 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 export default function N1CasinoText() {
+  const externalHref = "https://www.n1casino.gr/el";
   return (
     <div className=" p-6 max-w-6xl mx-auto space-y-10 text-center bg-gray-900">
       {/* 1. Введение */}
 
       <section className="py-8 px-4 bg-[#0d0d0d] text-white">
-  <h2 className="text-3xl font-bold mb-6">Πλεονεκτήματα του N1 Casino</h2>
+        <h2 className="text-3xl font-bold mb-6">Πλεονεκτήματα του N1 Casino</h2>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-    {/* 1. Ποικιλία παιχνιδιών */}
-    <div className="
-      bg-[#1f1f1f] 
-      rounded-lg 
-      p-4 
-      shadow-lg 
-      flex 
-      flex-col 
-      transform 
-      transition-transform 
-      duration-300 
-      hover:scale-105 
-      hover:shadow-2xl
-    ">
-      <div className="relative mb-4 w-full h-40">
-        <Image
-          src="/images/row1.jpg" // Replace with your image path
-          alt="Ποικιλία παιχνιδιών"
-          fill
-          className="object-cover rounded-md"
-        />
-      </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {/* 1. Ποικιλία παιχνιδιών */}
+          <div
+            className="
+            bg-[#1f1f1f] 
+            rounded-lg 
+            p-4 
+            shadow-lg 
+            flex 
+            flex-col 
+            transform 
+            transition-transform 
+            duration-300 
+            hover:scale-105 
+            hover:shadow-2xl
+          "
+          >
+            <div className="relative mb-4 w-full h-40">
+              <Image
+                src="/images/row1.jpg" // Replace with your image path
+                alt="Ποικιλία παιχνιδιών"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
 
-      <h3 className="text-xl font-semibold mb-2">Ποικιλία παιχνιδιών</h3>
-      <p className="text-sm mb-4">
-        Εκατοντάδες τίτλοι από παρόχους όπως Pragmatic Play και NetEnt.
-      </p>
-      <button className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md">
-        Μάθε Περισσότερα
-      </button>
-    </div>
+            <h3 className="text-xl font-semibold mb-2">Ποικιλία παιχνιδιών</h3>
+            <p className="text-sm mb-4">
+              Εκατοντάδες τίτλοι από παρόχους όπως Pragmatic Play και NetEnt.
+            </p>
+            <Link
+              href={externalHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md"
+            >
+              Μάθε Περισσότερα
+            </Link>
+          </div>
 
-    {/* 2. Αξιοπιστία */}
-    <div className="
-      bg-[#1f1f1f] 
-      rounded-lg 
-      p-4 
-      shadow-lg 
-      flex 
-      flex-col 
-      transform 
-      transition-transform 
-      duration-300 
-      hover:scale-105 
-      hover:shadow-2xl
-    ">
-      <div className="relative mb-4 w-full h-40">
-        <Image
-          src="/images/row2.jpg"
-          alt="Αξιοπιστία"
-          fill
-          className="object-cover rounded-md"
-        />
-      </div>
+          {/* 2. Αξιοπιστία */}
+          <div
+            className="
+            bg-[#1f1f1f] 
+            rounded-lg 
+            p-4 
+            shadow-lg 
+            flex 
+            flex-col 
+            transform 
+            transition-transform 
+            duration-300 
+            hover:scale-105 
+            hover:shadow-2xl
+          "
+          >
+            <div className="relative mb-4 w-full h-40">
+              <Image
+                src="/images/row2.jpg"
+                alt="Αξιοπιστία"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
 
-      <h3 className="text-xl font-semibold mb-2">Αξιοπιστία</h3>
-      <p className="text-sm mb-4">
-        Συναλλαγές με εγκεκριμένες μεθόδους (όπως Paysafe, Skrill και Neteller) και κρυπτογράφηση SSL.
-      </p>
-      <button className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md">
-        Μάθε Περισσότερα
-      </button>
-    </div>
+            <h3 className="text-xl font-semibold mb-2">Αξιοπιστία</h3>
+            <p className="text-sm mb-4">
+              Συναλλαγές με εγκεκριμένες μεθόδους (όπως Paysafe, Skrill και
+              Neteller) και κρυπτογράφηση SSL.
+            </p>
+            <Link
+              href={externalHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md"
+            >
+              Μάθε Περισσότερα
+            </Link>
+          </div>
 
-    {/* 3. Προσφορές */}
-    <div className="
-      bg-[#1f1f1f] 
-      rounded-lg 
-      p-4 
-      shadow-lg 
-      flex 
-      flex-col 
-      transform 
-      transition-transform 
-      duration-300 
-      hover:scale-105 
-      hover:shadow-2xl
-    ">
-      <div className="relative mb-4 w-full h-40">
-        <Image
-          src="/images/row3.jpg"
-          alt="Προσφορές"
-          fill
-          className="object-cover rounded-md"
-        />
-      </div>
+          {/* 3. Προσφορές */}
+          <div
+            className="
+            bg-[#1f1f1f] 
+            rounded-lg 
+            p-4 
+            shadow-lg 
+            flex 
+            flex-col 
+            transform 
+            transition-transform 
+            duration-300 
+            hover:scale-105 
+            hover:shadow-2xl
+          "
+          >
+            <div className="relative mb-4 w-full h-40">
+              <Image
+                src="/images/row3.jpg"
+                alt="Προσφορές"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
 
-      <h3 className="text-xl font-semibold mb-2">Προσφορές</h3>
-      <p className="text-sm mb-4">
-        Μπόνους καλωσορίσματος, εβδομαδιαίες ανταμοιβές και δωρεάν spins.
-      </p>
-      <button className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md">
-        Μάθε Περισσότερα
-      </button>
-    </div>
+            <h3 className="text-xl font-semibold mb-2">Προσφορές</h3>
+            <p className="text-sm mb-4">
+              Μπόνους καλωσορίσματος, εβδομαδιαίες ανταμοιβές και δωρεάν spins.
+            </p>
+            <Link
+              href={externalHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md"
+            >
+              Μάθε Περισσότερα
+            </Link>
+          </div>
 
-    {/* 4. Εξυπηρέτηση πελατών */}
-    <div className="
-      bg-[#1f1f1f] 
-      rounded-lg 
-      p-4 
-      shadow-lg 
-      flex 
-      flex-col 
-      transform 
-      transition-transform 
-      duration-300 
-      hover:scale-105 
-      hover:shadow-2xl
-    ">
-      <div className="relative mb-4 w-full h-40">
-        <Image
-          src="/images/row4.jpg"
-          alt="Εξυπηρέτηση πελατών"
-          fill
-          className="object-cover rounded-md"
-        />
-      </div>
+          {/* 4. Εξυπηρέτηση πελατών */}
+          <div
+            className="
+            bg-[#1f1f1f] 
+            rounded-lg 
+            p-4 
+            shadow-lg 
+            flex 
+            flex-col 
+            transform 
+            transition-transform 
+            duration-300 
+            hover:scale-105 
+            hover:shadow-2xl
+          "
+          >
+            <div className="relative mb-4 w-full h-40">
+              <Image
+                src="/images/row4.jpg"
+                alt="Εξυπηρέτηση πελατών"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
 
-      <h3 className="text-xl font-semibold mb-2">Εξυπηρέτηση πελατών</h3>
-      <p className="text-sm mb-4">
-        24ωρη υποστήριξη στα ελληνικά μέσω live chat ή email.
-      </p>
-      <button className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md">
-        Μάθε Περισσότερα
-      </button>
-    </div>
+            <h3 className="text-xl font-semibold mb-2">Εξυπηρέτηση πελατών</h3>
+            <p className="text-sm mb-4">
+              24ωρη υποστήριξη στα ελληνικά μέσω live chat ή email.
+            </p>
+            <Link
+              href={externalHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md"
+            >
+              Μάθε Περισσότερα
+            </Link>
+          </div>
 
-    {/* 5. Ζωντανό Blackjack */}
-    <div className="
-      bg-[#1f1f1f] 
-      rounded-lg 
-      p-4 
-      shadow-lg 
-      flex 
-      flex-col 
-      transform 
-      transition-transform 
-      duration-300 
-      hover:scale-105 
-      hover:shadow-2xl
-    ">
-      <div className="relative mb-4 w-full h-40">
-        <Image
-          src="/images/row5.jpg"
-          alt="Ζωντανό Blackjack"
-          fill
-          className="object-cover rounded-md"
-        />
-      </div>
+          {/* 5. Ζωντανό Blackjack */}
+          <div
+            className="
+            bg-[#1f1f1f] 
+            rounded-lg 
+            p-4 
+            shadow-lg 
+            flex 
+            flex-col 
+            transform 
+            transition-transform 
+            duration-300 
+            hover:scale-105 
+            hover:shadow-2xl
+          "
+          >
+            <div className="relative mb-4 w-full h-40">
+              <Image
+                src="/images/row5.jpg"
+                alt="Ζωντανό Blackjack"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
 
-      <h3 className="text-xl font-semibold mb-2">Ζωντανό Blackjack</h3>
-      <p className="text-sm mb-4">
-        Το περιβάλλον blackjack σε πραγματικό χρόνο, με πολλές παραλλαγές και διαφορετικά όρια.
-      </p>
-      <button className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md">
-        Μάθε Περισσότερα
-      </button>
-    </div>
-  </div>
-</section>
-
+            <h3 className="text-xl font-semibold mb-2">Ζωντανό Blackjack</h3>
+            <p className="text-sm mb-4">
+              Το περιβάλλον blackjack σε πραγματικό χρόνο, με πολλές παραλλαγές
+              και διαφορετικά όρια.
+            </p>
+            <Link
+              href={externalHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-md"
+            >
+              Μάθε Περισσότερα
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section>
         <h2 className="text-3xl font-bold mb-6">
@@ -216,27 +254,6 @@ export default function N1CasinoText() {
           πελατών. Η πλατφόρμα για κινητά έχει σχεδιαστεί για να είναι φιλική
           προς το χρήστη, διασφαλίζοντας ότι οι παίκτες μπορούν να πλοηγηθούν
           και να παίξουν τα αγαπημένα τους παιχνίδια με ευκολία.
-        </p>
-        <p className="text-base mb-6 leading-relaxed">
-          Η αφοσίωση του N1 Casino στην ικανοποίηση των πελατών είναι επίσης
-          αξιοσημείωτη. Το καζίνο προσφέρει μια ολοκληρωμένη ενότητα Συχνές
-          Ερωτήσεις, Υποστήριξη ηλεκτρονικού ταχυδρομείου και μια λειτουργία
-          ζωντανής συνομιλίας που είναι διαθέσιμη 24/7. Αυτό διασφαλίζει ότι
-          τυχόν απορίες ή ανησυχίες που ενδέχεται να έχουν οι παίκτες
-          αντιμετωπίζονται άμεσα και αποτελεσματικά.
-        </p>
-        <p className="text-base mb-6 leading-relaxed">
-          Τέλος, η δέσμευση του Ν1 καζίνο για Υπεύθυνο παιχνίδι είναι αξιέπαινη.
-          Το καζίνο παρέχει εργαλεία και πόρους για να βοηθήσει τους παίκτες να
-          διαχειριστούν τις συνήθειες παιχνιδιού τους και προσφέρει υποστήριξη
-          σε όσους μπορεί να αγωνίζονται με προβλήματα παιχνιδιού.
-        </p>
-        <p className="text-base mb-6 leading-relaxed">
-          Συνοπτικά, η επιλογή του N1 Casino προσφέρει στους παίκτες μια ασφαλή,
-          διασκεδαστική και υπεύθυνη εμπειρία παιχνιδιού. Με την εκτεταμένη
-          επιλογή παιχνιδιών, τη φιλική προς το χρήστη πλατφόρμα και τη δέσμευση
-          για ικανοποίηση των παικτών, το N1 Casino είναι μια εξαιρετική επιλογή
-          για όσους θέλουν να απολαύσουν διαδικτυακά παιχνίδια καζίνο.
         </p>
       </section>
 
@@ -319,9 +336,14 @@ export default function N1CasinoText() {
           <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight transition-transform duration-500 ease-in-out group-hover:scale-125">
             100% ΈΩΣ €300
           </h2>
-          <button className="bg-red-600 hover:bg-red-500 transition-colors px-6 py-3 rounded-md text-sm md:text-base font-semibold">
+          <Link
+            href="https://www.n1casino.gr/el"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 hover:bg-red-500 transition-colors px-6 py-3 rounded-md text-sm md:text-base font-semibold"
+          >
             Για να μάθετε περισσότερα
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -359,50 +381,57 @@ export default function N1CasinoText() {
       </section>
 
       <section className="py-8 px-4 bg-gray-900 text-white">
-      <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-        {/* Левый столбец: Текст */}
-        <div className="md:w-1/2">
-          {/* 10. Όροι & Προϋποθέσεις */}
-          <h2 className="text-3xl font-bold mb-6">Όροι &amp; Προϋποθέσεις</h2>
-          <p className="text-base mb-6 leading-relaxed">
-            Κάθε μπόνους συνοδεύεται από συγκεκριμένους κανόνες, όπως απαιτήσεις στοιχηματισμού
-            και ημερομηνίες λήξης. Αν θέλετε να αυξήσετε τις πιθανότητες επιτυχίας, διαβάστε
-            προσεκτικά όλες τις προϋποθέσεις πριν διεκδικήσετε οποιαδήποτε προσφορά.
-          </p>
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+          {/* Левый столбец: Текст */}
+          <div className="md:w-1/2">
+            {/* 10. Όροι & Προϋποθέσεις */}
+            <h2 className="text-3xl font-bold mb-6">Όροι &amp; Προϋποθέσεις</h2>
+            <p className="text-base mb-6 leading-relaxed">
+              Κάθε μπόνους συνοδεύεται από συγκεκριμένους κανόνες, όπως
+              απαιτήσεις στοιχηματισμού και ημερομηνίες λήξης. Αν θέλετε να
+              αυξήσετε τις πιθανότητες επιτυχίας, διαβάστε προσεκτικά όλες τις
+              προϋποθέσεις πριν διεκδικήσετε οποιαδήποτε προσφορά.
+            </p>
 
-          {/* 11. Επιπλέον Πληροφορίες για Αποκλειστικές Προσφορές */}
-          <h2 className="text-3xl font-bold mb-6">
-            Επιπλέον Πληροφορίες για Αποκλειστικές Προσφορές
-          </h2>
-          <p className="text-base mb-6 leading-relaxed">
-            Μια μεγάλη επιτυχία που κάνει το ν1 Casino idiaitera ελληνικό είναι οι διαφορές που
-            προχωρούν που καταλήγουν σε περιφερειακά. Αυτές οι προσφορές μπορούν να αφορούν ειδικά
-            ταυρνούα, αναβαθμίσεις επόπεδων στα προγράμματα πιστωτής ή ακόμα και προσωποποιημένα
-            μπόνους που δεν είναι σε vip εικόνες.
-          </p>
-        </div>
-
-        {/* Правый столбец: Картинка + Кнопка под ней */}
-        <div className="md:w-1/2 flex flex-col items-center">
-          {/* Можно добавить hover-эффект, чтобы картинка была более "интерактивной" */}
-          <div className="relative w-full h-auto cursor-pointer transition-transform hover:scale-105">
-            <Image
-              src="/images/first.jpg" // Замените на свой путь к картинке
-              alt="Προσφορά Εικόνα"
-              width={750}
-              height={300}
-              className="rounded-md w-full h-auto"
-              priority
-            />
+            {/* 11. Επιπλέον Πληροφορίες για Αποκλειστικές Προσφορές */}
+            <h2 className="text-3xl font-bold mb-6">
+              Επιπλέον Πληροφορίες για Αποκλειστικές Προσφορές
+            </h2>
+            <p className="text-base mb-6 leading-relaxed">
+              Μια μεγάλη επιτυχία που κάνει το ν1 Casino idiaitera ελληνικό
+              είναι οι διαφορές που προχωρούν που καταλήγουν σε περιφερειακά.
+              Αυτές οι προσφορές μπορούν να αφορούν ειδικά ταυρνούα,
+              αναβαθμίσεις επόπεδων στα προγράμματα πιστωτής ή ακόμα και
+              προσωποποιημένα μπόνους που δεν είναι σε vip εικόνες.
+            </p>
           </div>
 
-          {/* Кнопка под картинкой */}
-          <button className="mt-10 bg-red-600 hover:bg-red-500 px-10 py-3 text-sm hover:scale-105 rounded-md transition-transform font-semibold transition-colors">
-            Πάρε Μπόνους
-          </button>
+          {/* Правый столбец: Картинка + Кнопка под ней */}
+          <div className="md:w-1/2 flex flex-col items-center">
+            {/* Можно добавить hover-эффект, чтобы картинка была более "интерактивной" */}
+            <div className="relative w-full h-auto cursor-pointer transition-transform hover:scale-105">
+              <Image
+                src="/images/first.jpg" // Замените на свой путь к картинке
+                alt="Προσφορά Εικόνα"
+                width={750}
+                height={300}
+                className="rounded-md w-full h-auto"
+                priority
+              />
+            </div>
+
+            {/* Кнопка под картинкой */}
+            <Link
+              href="https://www.n1casino.gr/el"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 bg-red-600 hover:bg-red-500 px-10 py-3 text-sm hover:scale-105 rounded-md transition-transform font-semibold transition-colors"
+            >
+              Πάρε Μπόνους
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* 12. Μέθοδοι Πληρωμής & Ασφάλεια */}
       <section>
@@ -453,7 +482,6 @@ export default function N1CasinoText() {
           </li>
         </ul>
       </section>
-
 
       <div className="mb-8">
         <Image
@@ -511,27 +539,32 @@ export default function N1CasinoText() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: Φρουτάκια */}
           <div className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg h-64">
-            {/* Фоновое изображение со слабым блюром */}
+            {/* Background image with slight blur */}
             <div className="absolute inset-0">
               <Image
-                src="/images/slots.jpg" // Замените на своё изображение
+                src="/images/slots.jpg" // Replace with your image path
                 alt="Φρουτάκια"
                 fill
                 className="object-cover filter blur-sm transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-            {/* Полупрозрачная тёмная подложка */}
+            {/* Semi-transparent dark overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-colors duration-300" />
-            {/* Текст и кнопка */}
+            {/* Text and button */}
             <div className="relative z-10 p-6 flex flex-col h-full">
               <h3 className="text-4xl font-bold mb-2">Φρουτάκια</h3>
               <p className="text-lg mb-4">
                 Από κλασικά έως video slots με δωρεάν demo.
               </p>
               <div className="mt-auto">
-                <button className="bg-red-600 hover:bg-red-500 text-sm px-4 py-2 rounded-md">
+                <Link
+                  href="https://www.n1casino.gr/el"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-600 hover:bg-red-500 text-sm px-4 py-2 rounded-md"
+                >
                   Παίξε
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -540,7 +573,7 @@ export default function N1CasinoText() {
           <div className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg h-64">
             <div className="absolute inset-0">
               <Image
-                src="/images/roulette.jpg" // Замените на своё изображение
+                src="/images/roulette.jpg" // Replace with your image path
                 alt="Ρουλέτα & Blackjack"
                 fill
                 className="object-cover filter blur-sm transition-transform duration-300 group-hover:scale-105"
@@ -555,9 +588,14 @@ export default function N1CasinoText() {
                 Κλασικές επιλογές τραπεζιών με διαφορετικούς κανόνες.
               </p>
               <div className="mt-auto">
-                <button className="bg-red-600 hover:bg-red-500 text-sm px-4 py-2 rounded-md">
+                <Link
+                  href="https://www.n1casino.gr/el"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-600 hover:bg-red-500 text-sm px-4 py-2 rounded-md"
+                >
                   Παίξε
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -566,7 +604,7 @@ export default function N1CasinoText() {
           <div className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg h-64">
             <div className="absolute inset-0">
               <Image
-                src="/images/poker.jpg" // Замените на своё изображение
+                src="/images/poker.jpg" // Replace with your image path
                 alt="Πόκερ"
                 fill
                 className="object-cover filter blur-sm transition-transform duration-300 group-hover:scale-105"
@@ -579,9 +617,14 @@ export default function N1CasinoText() {
                 Εικονικά τραπέζια πολλαπλών παικτών.
               </p>
               <div className="mt-auto">
-                <button className="bg-red-600 hover:bg-red-500 text-sm px-4 py-2 rounded-md">
+                <Link
+                  href="https://www.n1casino.gr/el"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-600 hover:bg-red-500 text-sm px-4 py-2 rounded-md"
+                >
                   Παίξε
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -721,6 +764,27 @@ export default function N1CasinoText() {
           τραπέζια υψηλής ποιότητας. Είτε στο desktop είτε στο mobile app, αρκεί
           να κάνετε το πρώτο βήμα και να παίξετε με μέτρο – έτσι τα κέρδη σας
           μπορούν να φτάσουν ψηλά.
+        </p>
+        <p className="text-base mb-6 leading-relaxed">
+          Η αφοσίωση του N1 Casino στην ικανοποίηση των πελατών είναι επίσης
+          αξιοσημείωτη. Το καζίνο προσφέρει μια ολοκληρωμένη ενότητα Συχνές
+          Ερωτήσεις, Υποστήριξη ηλεκτρονικού ταχυδρομείου και μια λειτουργία
+          ζωντανής συνομιλίας που είναι διαθέσιμη 24/7. Αυτό διασφαλίζει ότι
+          τυχόν απορίες ή ανησυχίες που ενδέχεται να έχουν οι παίκτες
+          αντιμετωπίζονται άμεσα και αποτελεσματικά.
+        </p>
+        <p className="text-base mb-6 leading-relaxed">
+          Τέλος, η δέσμευση του Ν1 καζίνο για Υπεύθυνο παιχνίδι είναι αξιέπαινη.
+          Το καζίνο παρέχει εργαλεία και πόρους για να βοηθήσει τους παίκτες να
+          διαχειριστούν τις συνήθειες παιχνιδιού τους και προσφέρει υποστήριξη
+          σε όσους μπορεί να αγωνίζονται με προβλήματα παιχνιδιού.
+        </p>
+        <p className="text-base mb-6 leading-relaxed">
+          Συνοπτικά, η επιλογή του N1 Casino προσφέρει στους παίκτες μια ασφαλή,
+          διασκεδαστική και υπεύθυνη εμπειρία παιχνιδιού. Με την εκτεταμένη
+          επιλογή παιχνιδιών, τη φιλική προς το χρήστη πλατφόρμα και τη δέσμευση
+          για ικανοποίηση των παικτών, το N1 Casino είναι μια εξαιρετική επιλογή
+          για όσους θέλουν να απολαύσουν διαδικτυακά παιχνίδια καζίνο.
         </p>
         <p className="text-base mb-6 leading-relaxed">
           Παίξτε υπεύθυνα και θυμηθείτε: μόνο που χρειάζεται είναι να γνωρίζετε

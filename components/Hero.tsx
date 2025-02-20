@@ -1,17 +1,18 @@
 "use client";
+import Link from 'next/link';
 
 export default function Hero() {
   return (
     <section
       className="
-    relative 
-    w-full 
-    h-[300px]         /* Height on extra-small screens */
-    sm:h-[400px]      /* Height on small screens (≥640px) */
-    md:h-[600px]      /* Height on medium screens (≥768px) */
-    bg-cover 
-    bg-center
-  "
+        relative 
+        w-full 
+        h-[300px]         /* Height on extra-small screens */
+        sm:h-[400px]      /* Height on small screens (≥640px) */
+        md:h-[600px]      /* Height on medium screens (≥768px) */
+        bg-cover 
+        bg-center
+      "
       style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
     >
       {/* Gradient overlay: dark on left, fading to transparent on the right */}
@@ -26,9 +27,13 @@ export default function Hero() {
           <p className="text-2xl mb-6 text-left">
             Έως 1.000€ + 150 Free Spins!
           </p>
-          <button className="bg-n1red px-6 py-3 text-lg font-semibold rounded hover:bg-red-600 transition">
+          {/* Using Link without an extra <a> tag */}
+          <Link
+            href="https://www.n1casino.gr/el"
+            className="bg-n1red px-6 py-3 text-lg font-semibold rounded hover:bg-red-600 transition"
+          >
             Μάθε Περισσότερα
-          </button>
+          </Link>
         </div>
       </div>
     </section>
