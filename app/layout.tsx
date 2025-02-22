@@ -17,6 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="K37Bu6n7t7X-qDZONcRf5sZG1kgkb3u8Qx5zBBENMoY" />
       <body>
         {/* Шапка сайта */}
         <Header />
