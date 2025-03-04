@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://casino7.gr
+
+# Sitemaps
+Sitemap: https://casino7.gr/sitemap.xml
